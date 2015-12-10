@@ -101,9 +101,65 @@
                     <hr class="primary">
 		    <p>The 88th Academy Awards airs in February which also means we are counting down the days to find out if Leonardo DiCaprio will finally bring home an Oscar.  We’re pretty sure Leo is tired of hearing “better luck next year”, so we wanted to build an Oscar predictor to let him know if he should bother practicing that acceptance speech or not.  Actually no, we just wanted to build an Oscar predictor.</p>
             <p>So what does it take to get that golden statue anyhow?  We used the IMDB database to find gather as many features we could on movies that have been nominated for an Oscar.  We trained several versions of Oscar predictors using a data from 1981 to 2004.  For each version, we counted how many times we got it right using data we set aside from the Oscars in 2005 and 2006.  This was a good way to see how our final Oscar predictor would fare in future Academy Awards.  We finally settled on Oscar Predictor 7.0 which has 81% accuracy rate.  The predictor was built using a Random Forest Classifier and instead of getting into the nitty gritty details about what that means, we’ll give you the cliff notes version.</p>
+                <h4 Class = "List Element" style="text-align: left; font-weight: bold">Early birds…Do Not Get The Worm</h4>
+                    <p align="left" style="font-size:100%;">That’s right, when it comes to winning an Oscar, it seems that given a film is nominated, it will more likely win if released later in the year.  According to the <a href="http://www.oscars.org/sites/oscars/files/88aa_rules.pdf">Oscar Rulebook</a> (yes, there is such a thing), films must be released by December 31 of the previous year in order to be eligible for the February award show. Seems like filmmakers don’t want to show all their cards too early according to the data.  Nominated movies that were released in August, September, November and December won over 30% of the time compared to movies released in May, which won less than 20% of the time.  While we cannot say that releasing a movie in December will increase your chances of winning an Oscar, there does seem to be something magical about that time of year.</p>
+
+                                <img src="https://media.giphy.com/media/OzAOP0WnZiiEE/giphy.gif" alt="Late" style="width:300px;height:300px;">
+
+                <h4 Class = "List Element" style="text-align: left; font-weight: bold">The Longer, the Better</h4>
+                    <p align="left" style="font-size:100%;">The Oscars has categories specifically dedicated to short films.  Of course this comes with more criteria as outlined in the <a href="http://www.oscars.org/sites/oscars/files/88aa_rules.pdf">Oscar Rulebook</a> which says films must have a runtime of 40 minutes or less to be considered a short film.  We found that out of the nominated films that qualify as a short film, the ones with longer run times take home the gold slightly more.  We came to similar conclusions when looking at longer films.</p>
+
+                            <img src="https://media.giphy.com/media/cP7qgxarF2oiA/giphy.gif" alt="Sexy" style="width:300px;height:300px;">
+
+                <h4 Class = "List Element" style="text-align: left; font-weight: bold">Raunchy Keywords</h4>
+                    <p align="left" style="font-size:100%;">IMDB gives a list of keywords associated with a movie.  Oscar Predictor 7.0 found these keywords pretty helpful picking out the winners:  violence, marriage, sex, and mother-son-relationship.  You know what they say...sex sells!</p>
+
+
+                                <img src="http://www.reactiongifs.com/r/oww.gif" alt="Sexy" style="width:300px;height:300px;">
+
+                <h4 Class = "List Element" style="text-align: left; font-weight: bold">Nominated for Best Picture is a Shoe In</h4>
+                    <p align="left" style="font-size:100%;">Yeah, so it’s pretty easy to win an Oscar…all you have to do is get nominated for Best Picture.  All jokes aside, we found that movies that are nominated for Best Picture tend to win in at least one category, even if they don’t get to take home the big prize.  We figured this is largely because a movie nominated for Best Picture is an all around good movie, maybe even nominated for several other categories.</p>
+
+                                <img src="https://media.giphy.com/media/laUY2MuoktHPy/giphy.gif" alt="Boom" style="width:300px;height:300px;">
+
+               <h4 Class = "List Element" style="text-align: left; font-weight: bold">But Avoid Being Nominated for Best Cinematography</h4>
+                    <p align="left" style="font-size:100%;">Oddly enough, there are some categories that, if nominated for, lowers a film’s probability of winning.  A couple versions of our Oscar Predictor indicated that filmmakers should avoid being nominated for Best Cinematography, Best Sound Mixing, Best Costume Design if they want a chance at winning an Oscar.  These are almost like second tier categories...so one possible theory is that the big guys, the ones that were nominated for Best Picture, were also nominated for these secondary awards.  The little guys, who only had one shot at winning an Oscar for having great costumes, has no chance.  Bummer.</p>
+
+                                <img src="http://45.media.tumblr.com/d6c6a9e8a672e31b942106e725765ffd/tumblr_nlsofcZ3751u8zsalo1_500.gif" alt="Sad" style="width:300px;height:300px;">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
                     <h2 class="section-heading">How did we do it?</h2>
                     <hr class="primary">
-		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt varius pulvinar. Praesent arcu nulla, ultricies vel mollis ut, venenatis sed nulla. Morbi pharetra in ligula vitae cursus. Fusce rhoncus urna massa, quis facilisis nunc semper non. Quisque rutrum arcu hendrerit erat efficitur, quis hendrerit leo commodo. Vivamus at ipsum vel nibh dignissim scelerisque. Nulla in est vitae nulla tincidunt elementum et commodo turpis. Aliquam et posuere nisl, ut rhoncus diam. Curabitur auctor tellus nec dictum pellentesque. Vestibulum ullamcorper lorem dolor, at tempor felis egestas vel. Aliquam eleifend tempor aliquet. Aenean nunc mauris, rhoncus a nisi et, fringilla tristique odio.</p>
+                    <h3 class="sub-section heading" style="text-align: left">Background and Motivation</h3>
+                        <p align="left" style = "font-size:100%">Winning an Oscar is every filmmaker's dream.  As movie buffs and aspiring filmmakers (…just kidding), we wanted to see what it took to win the golden statue.  Currently there are 24 categories ranging from Best Picture to Best Sound Editing.  We all had our own suspicions of what movie features are associated with winning an Oscar.  We set out to find the probability of a film winning an Oscar given it is nominated.  More specifically, we wanted to find a classifier that could identify the winners and the losers.</p>
+                    <h3 class="sub-section heading" style="text-align: left">Data Gathering and Processing</h3>
+                        <p align="left" style = "font-size:100%">We obtained a complete list of all the Oscar nominated films through the 79th Academy Awards in 2006 from <a href="http://www.ya-shin.com/awards/awards.html#oscars">ya-shin.com</a>.  Although the data came in a csv file, there were several layers of data cleaning involved before being able to analyze the data.  We analyzed only the data between 1981-2006, as the categories have remained relatively constant during this period.  The data for each movie included the categories the film was nominated for and won.  To include features for the films that could be predictive of winning an Oscar, we utilized the IMDbpy package to complete our dataset.  IMDbpy is a Python package that contains various movie features from the IMDb database. 
+                        </p>
+                        <p align="left" style = "font-size:100%">The data had a handful of continuous variables such as runtime and month of release date, however the majority of the features were categorical such as genre and keywords.  Knowing that sklearn could only accept numerical variables as inputs, we converted all the categorical variables into dummy variables.   To reduce the dimensionality, we used only the top categories in our analysis.
+                        </p>
+                    <h3 class="sub-section heading" style="text-align: left">Exploratory Data Analysis</h3>
+                        <p align="left" style = "font-size:100%">We began with exploratory data analysis to identify what variables would be important in building an effective classifier.  Grouping the movies by winners and losers, we were able to visually determine if any variables were good separators.  For example, a film nominated for Best Picture is more likely to win an Oscar.  This makes sense because films nominated for Best Picture tend to be the best movies across all categories.  Therefore, even if the movie does not win Best Picture, it is likely to win an Oscar in one or more different categories.
+                        </p>
+                        <p align="left" style = "font-size:100%">We were also curious to see if keywords could be predictive of Oscar winners.  For each of the top 25 keywords, we found the proportion of nominated films that won, which are plotted below.  Among the frequent keywords were “blood”, “death”, and “violence”.  From EDA, it was difficult to tell which keywords would be helpful in our classifer.
+                        </p>
+
+                            <img src="img/oscarpics/KeywordPlot.png" class="keywords" alt="" style="width:440px;height:400px;">
+
+                        <p align="left" style = "font-size:100%">Also, the month of release also seems to be associated with winning. In terms of raw numbers, movies that come out late in the year, especially November and December, receive the most number of nominations and awards. But in terms of percentage of nominated movies that actually win awards, there is no clear-cut best month. August, September, November, and December all seem to have an equally large rate of nominated movies that win big.
+                        </p>
+
+                    <h3 class="sub-section heading" style="text-align: left">Modeling and Results</h3>
+                        <p align="left" style = "font-size:100%">Since our project was focusing on prediction, we fit a variety of statistical models and tested the performance of each on data from the 2005 and 2006 Oscars (the latest years that we had data for). Ultimately, we found that the machine learning technique called Random Forests performed the best. It predicted Oscar winners for 2005-2006 with an 81% accuracy. This is an improvement from a 71% baseline accuracy (if we predicted all movies to be losers). So although there’s clearly room for improvement, the relative success of our final model indicates that we did capture some of the most important features that make a movie Oscar-worthy. </p>
+                        <p>We used decision surfaces to see how the classifer was deciding who was a winner when it came to month of release and number of nominations.  The plot confirms that there are many winners late in the year.  However, the plot also illustrates that the movies released later in the year must also receive more nominations to increase probability of winning.</p>
+
+                            <img src="img/oscarpics/RandomForest.png" class="keywords" alt="" style="width:440px;height:400px;">
+
+                    <h3 class="sub-section heading" style="text-align: left">Conclusion and Next Steps</h3>
+                        <p align="left" style = "font-size:100%">Moving forward, we would like to look at predicting what kinds of movies win certain awards (i.e., Best Picture, Best Costume Design, etc.). In order to maximize the amount of data we were working with, our analysis treated each ‘win’ as an equivalent outcome, when this is not in fact the case.</p>
+                        <p align="left" style = "font-size:100%">We also felt that we could have improved our accuracy by incorporating the cast into a predictor.  Typically Oscar winning movies have a cast full of A-list actors and actresses.  Although we developed a way to compute the “star power” for a given movie, it was very computationally intensive, making time the only obstacle from including the cast.  This also could have been extended to compute “director power” and “producer power”.</p>
                 </div>
             </div>
         </div>
