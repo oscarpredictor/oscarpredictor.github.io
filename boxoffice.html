@@ -131,10 +131,17 @@
                                 <li><b>Seasonality:</b> How does a release around Christmas or the summer vacation affect the outcomes of a movie?</li>
                                 <li><b>MPAA Rating:</b> For the kids, the parents, or the young adults?</li>
                                 <li><b>Power Studios:</b> Do movie production houses like Warner Bros. or Universal have a power of their own, besides the factors listed above?</li>
-
                             </ul>
-
                         </p>
+                    <h3 class="sub-section heading" style="text-align: left">Data Gathering and Processing</h3>
+                    <p align="left" style = "font-size:100%">
+                        The data was collected from a variety of sources, with the three primary ones being:
+                        <ul style="list-style-type:disc; text-align: left">
+                                <li><b>Box Office Mojo:</b> A repository of domestic and international sales by release year, for all movies that would be worth talking about. The annual lists stretch from 1985 to the present date, and datatables include opening weekend gross revenue, the # of opening theaters, release and close dates.</li>
+                                <li><b>The-Numbers.com:</b> This simple but effective website contains a list of movies and their estimated budgets for the last decade.</li>
+                                <li><b>IMDb Database:</b> IMDb provides access to a number of features at both the movie-level and person-level (actors, actresses, directors, etc.). While they have this available in large datasets through an external FTP portal, an enterprising group of movie analysts have put together the ‘IMDbpy’ package that provides a number of classes to more directly access the data through a python interface.</li>
+                        The scraping off the first two websites utilized methods similar to those learned during Homework 1, and were relatively straightforward in inserting into data dictionaries. The challenge emerged from attempting to combine these external data sources with the IMDb information. In order to prevent us having to match the data by hand, we were required to find keys that would match the data sources, while handling as many edge cases as possible. In similar fashion to the Oscar Prediction analysis, we underwent a series of data process helper functions and transformations to arrive at a combined dataset. Details can be found in the Box Office Scraper notebook provided.
+                    </p>
 
                 </div>
             </div>
