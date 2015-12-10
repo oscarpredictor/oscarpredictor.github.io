@@ -140,8 +140,40 @@
                                 <li><b>Box Office Mojo:</b> A repository of domestic and international sales by release year, for all movies that would be worth talking about. The annual lists stretch from 1985 to the present date, and datatables include opening weekend gross revenue, the # of opening theaters, release and close dates.</li>
                                 <li><b>The-Numbers.com:</b> This simple but effective website contains a list of movies and their estimated budgets for the last decade.</li>
                                 <li><b>IMDb Database:</b> IMDb provides access to a number of features at both the movie-level and person-level (actors, actresses, directors, etc.). While they have this available in large datasets through an external FTP portal, an enterprising group of movie analysts have put together the ‘IMDbpy’ package that provides a number of classes to more directly access the data through a python interface.</li>
+                            </ul>
                         The scraping off the first two websites utilized methods similar to those learned during Homework 1, and were relatively straightforward in inserting into data dictionaries. The challenge emerged from attempting to combine these external data sources with the IMDb information. In order to prevent us having to match the data by hand, we were required to find keys that would match the data sources, while handling as many edge cases as possible. In similar fashion to the Oscar Prediction analysis, we underwent a series of data process helper functions and transformations to arrive at a combined dataset. Details can be found in the Box Office Scraper notebook provided.
                     </p>
+                    <h3 class="sub-section heading" style="text-align: left">Exploratory Data Analysis</h3>
+                        <p align="left" style = "font-size:100%">
+                            Prior to determining the appropriate modeling techniques, we sought to explore the data received from these disparate sources. Given the continuous nature of our outcome variable - the gross revenue from a movie - we conducted a series of scatter plots to determine key relationships.
+                        </p>
+                        <h3 class="sub-section heading" style="text-align: left">Modeling and Results</h3>
+                        <p align="left" style = "font-size:100%">
+                            The analysis involved for these questions is markedly different from that employed for the Oscar prediction scenario. Here, we are less interested in classification or the prediction of groups, and more concerned with describing the factors that are associated with the higher revenues. This is driven both by the nature of the data (having a continuous outcome variable), but also by the philosophy behind the question. We are not looking to find a way to directly target a customer or an activity, but inform a movie executive’s strategy in thinking about the business of a movie.
+                        </p>
+                         <p align="left" style = "font-size:100%">                   
+                            To that end, we will be employing a linear multivariate regression model, with the gross revenue as the outcome determined by the variables indicated under the ‘objectives’ page. Our model building process, even before engaging in a Machine Learning hyperparameter optimization, we must determine what variables to include in our multivariate regression. To do so we employed the OLS from Statsmodel.api and began with a simple model that included budget, the number of opening theaters, and the season of release.
+                        </p>
+                         <p align="left" style = "font-size:100%">   
+                            As evidenced from the plot above, it appears that this rudimentary model does not do a great job of accounting for enough factors that would fit the model well. The blue line represents the best fit line based on the factors we provided, and the green line represents the lowess line for the data using these factors. The lowess line is a non-parametric curve that combines the multiple regression with a k-nn methodology, and its divergence from the best fit line indicates the relatively poor fit of the model.After a series of additional steps, we arrived at a model that also incorporates the opening weekend gross sales, MPAA rating, IMDb rating and removes the opening theaters variable. 
+                        </p>
+                        <p align="left" style = "font-size:100%">
+                            This model has achieved a much better fit of the data as indicated by the convergence of the blue and green lines above. With this in mind, we recreated this model in sklearn in order to be able to be able to tune the hyperparameters to achieve a tighter model fit. We invoked the Lasso procedure, and altered the classic do_classify function to find the optimal tuning parameters. The score function used was a mean-squared-error in order to accommodate for the regression used in the analysis. Even after the optimization, the final results of the model yielded coefficients that were very similar to those from the OLS in Statsmodel. The final coefficient tables were:
+                        </p>
+                    <h3 class="sub-section heading" style="text-align: left">Conclusion and Next Steps</h3>
+                        <p align="left" style = "font-size:100%">
+                            The results of analysis model provided interesting computational outputs that are worth discussing:
+                            <ul style="list-style-type:disc; text-align: left">
+                                <li>ABC</li>
+                                <li>DEF</li>
+                            </ul>
+                            There are many interesting directions this project can be continued in:
+                            <ul style="list-style-type:disc; text-align: left">
+                                <li>Further pre-processing to allow for better data matches between disparate datasets</li>
+                                <li>Incorporation of features beyond those included here such as a more detailed breakdown of budget specifics (e.g. marketing budget vs. cast pay vs. special effects)</li>
+                            </ul>
+                        </p>
+
 
                 </div>
             </div>
