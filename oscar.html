@@ -145,13 +145,15 @@
                         </p>
                         <p align="left" style = "font-size:100%">We were also curious to see if keywords could be predictive of Oscar winners.  For each of the top 25 keywords, we found the proportion of nominated films that won, which are plotted below.  Among the frequent keywords were “blood”, “death”, and “violence”.  From EDA, it was difficult to tell which keywords would be helpful in our classifer.
                         </p>
-                        <p align="left" style = "font-size:100%">Also, the month of release also seems to be associated with winning. In terms of raw numbers, movies that come out late in the year, especially November and December, receive the most number of nominations and awards. But in terms of percentage of nominated movies that actually win awards, there is no clear-cut best month. August, September, November, and December all seem to have an equally large rate of nominated movies that win big.
-                        </p>
 
                             <img src="img/oscarpics/KeywordPlot.png" class="keywords" alt="" style="width:440px;height:400px;">
 
+                        <p align="left" style = "font-size:100%">Also, the month of release also seems to be associated with winning. In terms of raw numbers, movies that come out late in the year, especially November and December, receive the most number of nominations and awards. But in terms of percentage of nominated movies that actually win awards, there is no clear-cut best month. August, September, November, and December all seem to have an equally large rate of nominated movies that win big.
+                        </p>
+
                     <h3 class="sub-section heading" style="text-align: left">Modeling and Results</h3>
                         <p align="left" style = "font-size:100%">Since our project was focusing on prediction, we fit a variety of statistical models and tested the performance of each on data from the 2005 and 2006 Oscars (the latest years that we had data for). Ultimately, we found that the machine learning technique called Random Forests performed the best. It predicted Oscar winners for 2005-2006 with an 81% accuracy. This is an improvement from a 71% baseline accuracy (if we predicted all movies to be losers). So although there’s clearly room for improvement, the relative success of our final model indicates that we did capture some of the most important features that make a movie Oscar-worthy. </p>
+                        <p>We used decision surfaces to see how the classifer was deciding who was a winner when it came to month of release and number of nominations.  The plot confirms that there are many winners late in the year.  However, the plot also illustrates that the movies released later in the year must also receive more nominations to increase probability of winning.</p>
 
                             <img src="img/oscarpics/RandomForest.png" class="keywords" alt="" style="width:440px;height:400px;">
 
