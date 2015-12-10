@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>How to win an Oscar</title>
+    <title>How to Win an Oscar</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -73,9 +73,9 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>How to win an Oscar</h1>
+                <h1 style="background: rgba(21, 4, 4, 0.3)">How to Win an Oscar</h1>
                 <hr>
-                <h2>Predicting winners from nominees</h2>
+                <h2 style="background: rgba(21, 4, 4, 0.3)">Predicting Winners from Nominees</h2>
             </div>
         </div>
     </header>
@@ -99,10 +99,10 @@
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Five Things You Should Know</h2>
                     <hr class="primary">
-		    <p>The 88th Academy Awards airs in February which also means we are counting down the days to find out if Leonardo DiCaprio will finally bring home an Oscar.  We’re pretty sure Leo is tired of hearing “better luck next year”, so we wanted to build an Oscar predictor to let him know if he should bother practicing that acceptance speech or not.  Actually no, we just wanted to build an Oscar predictor.</p>
-            <p>So what does it take to get that golden statue anyhow?  We used the IMDB database to find gather as many features we could on movies that have been nominated for an Oscar.  We trained several versions of Oscar predictors using a data from 1981 to 2004.  For each version, we counted how many times we got it right using data we set aside from the Oscars in 2005 and 2006.  This was a good way to see how our final Oscar predictor would fare in future Academy Awards.  We finally settled on Oscar Predictor 7.0 which has 81% accuracy rate.  The predictor was built using a Random Forest Classifier and instead of getting into the nitty gritty details about what that means, we’ll give you the cliff notes version.</p>
-                <h4 Class = "List Element" style="text-align: left; font-weight: bold">Early birds…Do Not Get The Worm</h4>
-                    <p align="left" style="font-size:100%;">That’s right, when it comes to winning an Oscar, it seems that given a film is nominated, it will more likely win if released later in the year.  According to the <a href="http://www.oscars.org/sites/oscars/files/88aa_rules.pdf">Oscar Rulebook</a> (yes, there is such a thing), films must be released by December 31 of the previous year in order to be eligible for the February award show. Seems like filmmakers don’t want to show all their cards too early according to the data.  Nominated movies that were released in August, September, November and December won over 30% of the time compared to movies released in May, which won less than 20% of the time.  While we cannot say that releasing a movie in December will increase your chances of winning an Oscar, there does seem to be something magical about that time of year.</p>
+		    <p>The 88th Academy Awards airs on February 28th, which means we are counting down the days to find out if Leonardo DiCaprio will finally bring home an Oscar. We’re pretty sure Leo is tired of hearing “better luck next year”, so we wanted to build an Oscar predictor to let him know if he should bother practicing that acceptance speech or not. Actually no, we just wanted to build an Oscar predictor.</p>
+            <p>So what does it take to get that golden statue anyhow?  We used the IMDb database to find gather as many features as we could on movies that have been nominated for an Oscar. We trained several versions of Oscar predictors using data from 1981 to 2004. For each version, we counted how many times we got it right using data we set aside from the Oscars in 2005 and 2006. This was a good way to see how our final Oscar predictor would fare in future Academy Awards. We finally settled on 'Oscar Predictor 7.0', a model that predicted Oscar outcomes with an 81% accuracy rate. The predictor was built using a Random Forest Classifier, but instead of getting into the nitty-gritty details about what that means, we’ll give you the Buzzfeed version.</p>
+                <h4 Class = "List Element" style="text-align: left; font-weight: bold">Early Birds… Do Not Get The Worm</h4>
+                    <p align="left" style="font-size:100%;">That’s right, when it comes to winning an Oscar, it seems that given a film is nominated, it will more likely win if released later in the year.  According to the <a href="http://www.oscars.org/sites/oscars/files/88aa_rules.pdf">Oscar Rulebook</a> (yes, there is such a thing), films must be released by December 31 of the previous year in order to be eligible for the February award show. Seems like filmmakers don’t want to show all their cards too early according to the data. Nominated movies that were released in August, September, November and December won over 30% of the time compared to movies released in May, which won less than 20% of the time.  While we cannot say that releasing a movie in December will increase your chances of winning an Oscar, there does seem to be something magical about that time of year.</p>
 
                                 <img src="https://media.giphy.com/media/OzAOP0WnZiiEE/giphy.gif" alt="Late" style="width:300px;height:300px;">
 
@@ -115,8 +115,8 @@
                     <p align="left" style="font-size:100%;">IMDB gives a list of keywords associated with a movie.  Oscar Predictor 7.0 found these keywords pretty helpful picking out the winners:  violence, marriage, sex, and mother-son-relationship.  You know what they say...sex sells!</p>
 
 
-                                <img src="http://49.media.tumblr.com/f75d5993fd20548dea93fd80d0955a4a/tumblr_n7ysq6LZRO1qelyl4o1_500.gif" alt="Sexy" style="width:300px;height:300px;">
-                                
+                                <img src="http://49.media.tumblr.com/f75d5993fd20548dea93fd80d0955a4a/tumblr_n7ysq6LZRO1qelyl4o1_500.gif" alt="Arnold" style="width:300px;height:300px;">
+
                 <h4 Class = "List Element" style="text-align: left; font-weight: bold">Nominated for Best Picture is a Shoe In</h4>
                     <p align="left" style="font-size:100%;">Yeah, so it’s pretty easy to win an Oscar… all you have to do is get nominated for Best Picture.  All jokes aside, we found that movies that are nominated for Best Picture tend to win in at least one category, even if they don’t get to take home the big prize.  We figured this is largely because a movie nominated for Best Picture is an all around good movie, maybe even nominated for several other categories.</p>
 
