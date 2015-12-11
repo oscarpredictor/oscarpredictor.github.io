@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Killin' It at the Box Office<</title>
+    <title>Killin' It at the Box Office</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -155,6 +155,14 @@
                     <h3 class="sub-section heading" style="text-align: left">Exploratory Data Analysis</h3>
                         <p align="left" style = "font-size:100%">
                             Prior to determining the appropriate modeling techniques, we sought to explore the data received from these disparate sources. Given the continuous nature of our outcome variable - the gross revenue from a movie - we conducted a series of scatter plots to determine key relationships.
+
+                            <h4 class="List Element" style="text-align: left; font-weight: bold">Gross Revenue vs. Budget</h4>
+                            <img src="img/boxofficepics/gross vs. budget.png" class="keywords" alt="" style="width:550px;height:500px;">
+                            <p align="left" style="font-size:100%;">Expectedly, there is a viable linear relatonship between the gross revenue of the movie and the budget that was put into it. However, as we see in the plot above, there is greater variation between the budget and revenue as both increase. This may result in budget being a positive predictor but one with lower significance.</p>
+                            <h4 class="List Element" style="text-align: left; font-weight: bold">Gross Revenue vs. rating</h4>
+                            <img src="img/boxofficepics/gross vs. rating.png" class="keywords" alt="" style="width:550px;height:500px;">
+                            <p align="left" style="font-size:100%;">We leverage the IMDb star rating as our closest proxy for the true 'quality' of a movie. Based on the plot above, the flat nature of the linear relationship indicates that rating may end up mattering less than we might believe.</p>
+                            
                         </p>
                         <h3 class="sub-section heading" style="text-align: left">Modeling and Results</h3>
                         <p align="left" style = "font-size:100%">
@@ -173,13 +181,16 @@
                         <p align="left" style = "font-size:100%">
                             The results of analysis model provided interesting computational outputs that are worth discussing:
                             <ul style="list-style-type:disc; text-align: left">
-                                <li>ABC</li>
-                                <li>DEF</li>
+                                <li>The 'budget' variable is both statistically signficant and meaningful. The coefficient of 0.30 indicates that every dollar in the budget entails 30 cents of revenue. This means that simply throwing money at a movie in the hopes that it works is not a wise strategy, and the other factors in the model are very important in ensuring that a movie does financially well.</li>
+                                <li>The coefficients on all the season variables indicates are negative, which means that the holdout month - December - appears to be associated with the best results for a movie's release, with movies being released during that month having an average 20M dollar boost compared to other seasons.</li>
+                                <li>The movie's MPAA rating also seems to matter, with both PG-13 and R-rated movies performing worse than their G-rated counterparts. The magnitude of the difference, controlling for all other factors, is about 18M dollars.</li>
+                                <li>The gross during the opening weekend is highly associated with the amount that the movie ends up making, with a coefficient of 2.7 this would emphasize the need to start off with a bang.</li>
+
                             </ul></p>
                             <p align="left" style = "font-size:100%">
                             There are many interesting directions this project can be continued in:
                             <ul style="list-style-type:disc; text-align: left">
-                                <li>Further pre-processing to allow for better data matches between disparate datasets</li>
+                                <li>Further pre-processing to allow for better data matches between disparate datasets, including information about the cast itself, or factor that may be more atypical.</li>
                                 <li>Incorporation of features beyond those included here such as a more detailed breakdown of budget specifics (e.g. marketing budget vs. cast pay vs. special effects)</li>
                             </ul>
                             </p>
