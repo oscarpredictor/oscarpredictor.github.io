@@ -1,6 +1,6 @@
 # Oscar Predictor website 
 
-This site was written by [@dhanus](http://github.com/dhanus), [@danatomc](http://github.com/danatomc), [@rmazumdar](http://github.com/rmazumdar), &amp;  [@sbuschbach](http://github.com/sbuschbach) for a [Harvard](http://www.harvard.edu/) [Data Science](http://cs109.org) final project. 
+This site was written by [@dhanus](http://github.com/dhanus), [@dtomc](http://github.com/dtomc), [@rmazumdar](http://github.com/rmazumdar), &amp;  [@sbuschbach](http://github.com/sbuschbach) for a [Harvard](http://www.harvard.edu/) [Data Science](http://cs109.org) final project. 
 
 ## Acknowledgemnts
 
